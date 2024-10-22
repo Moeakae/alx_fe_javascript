@@ -12,13 +12,13 @@ itemListArray.forEach(function(item) {
     item.textContent = 'Array: ${item.textcontent}';
 });
 
+// Creating nwe element
+const newDiv = document.createElement('div');
 
+// Appending elements
 
-
-
-
-
-
+const parentElement = document.getElementById('container');
+parentElement.appendChild(newDiv);
 
 function ShowRandomQuote() {
     const  newDiv = document.createElement();
