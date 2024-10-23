@@ -56,5 +56,21 @@ ShowNewQuote.addEventListener('click', () => {
 //  // console.log(quotesInput);
 // quotes.push(textInput)
 // })
-
-
+function createAddQuoteForm() {
+    const newQuoteText = document.querySelector("#newQuoteText").value;
+    const newQuoteCategory = document.querySelector("#newQuoteCategory").value;
+    const newQuoteAuthor = document.querySelector("#newQuoteAuthor").value || "Anonymous";
+    if (newQuoteText && newQuoteCategory) {
+        quotes.push({ 
+            quote: newQuoteText,
+            author: newQuoteAuthor,
+            category: newQuoteCategory,
+});
+quoteDisplay.innerHTML = quotes[random].quote;
+categoryDisplay.innerHTML = quotes[random].category;
+    } else { 
+        alert('quote ==category');
+    }
+    document.createElement("newDiv").appendChild("newDiv");
+}
+addNewQuotes.addEventListener("click", ShowRandomQuote);
