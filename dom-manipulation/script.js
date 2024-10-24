@@ -11,15 +11,12 @@ const itemListArray = Array.from(listItem);
 itemListArray.forEach(function(item) {
     item.textContent = 'Array: ${item.textcontent}';
 });
-// Generate random quotes
-function generate () {
-    randomQuote = randomNumber(myQuotes);
+// Selects a Random number, Picks the quotein that location in the array of Quotes
+function getRandomQuote () {
+    const number = Math.floor(Math.random() *5);
     const quote = document.getElementById('quote');
-    quote.innerHTML = myQuotes[randomQuote];
+    quote.innerHTML = myQuotes[random].source;
+    return getRandomQuote;
 }
-function randomNumber(array) {
-     const num = Math.round(Math.random() *(array.length - 1));
-     return num;
-} 
 const buttonQuote = document.getElementById('new-quote');
 buttonQuote.addEventListener('click', generate);
