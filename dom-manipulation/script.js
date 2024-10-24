@@ -14,8 +14,8 @@ itemListArray.forEach(function(item) {
 // Function to show a random quotes
 function ShowRandomQuotes() {
     const quoteDisplay = document.getElementById('quoteDisplay');
-    const randomindex = Math.floor(Math.random() *quote.length);
-    const quote = quotes[randomindex];
+    const random = Math.floor(Math.random() *quote.length);
+    const quote = quotes[random];
     quoteDisplay.innerHTML = '<p>"${quotes.text}" -  <strong>${quote.category}</strong></p>';
 }
 
