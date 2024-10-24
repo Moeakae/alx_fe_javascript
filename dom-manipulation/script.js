@@ -11,29 +11,15 @@ const itemListArray = Array.from(listItem);
 itemListArray.forEach(function(item) {
     item.textContent = 'Array: ${item.textcontent}';
 });
-// Function to show a random quotes
-let randomquotes = maths.floor(Math.random()*quoteText) + quoteCategory;
-ShowRandomQuotes = function() {
-if (randomquotes ==quoteText){
-    const quoteDisplay = document.getElementById('quoteDisplay');
-    const random = Math.floor(Math.random() *quote.length);
-    const quote = quotes[random];
-    quoteDisplay.innerHTML = '<p>"${quotes.text}" -  <strong>${quote.category}</strong></p>';
+// Generate random quotes
+function generate () {
+    randomQuote = randomNumber(myQuotes);
+    const quote = document.getElementById('quote');
+    quote.innerHTML = myQuotes[randomQuote];
 }
-}
-
-// Function to add a new quote
-function addQuote() {
-    const newQuoteText = document.getElementById('newQuotetext').value;
-    const newQuoteCategory = document.getElementById('newQuoteCategory').value;
-if (newQuoteText && newQuoteCategory) {
-    // Add the new quote to the array
-    quotes.push({ text: newQuoteText, category: newQuoteCategory});
-    alert("New quote add!");
-    // Clear input fields
-    document.getElementById('newQuoteText').value = '';
-    document.getElementById('newQuoteCategory').value = '';
-} else{
-     alert("Please enter both quote text and category.");
-}
-}
+function randomNumber(array) {
+     const num = Math.round(Math.random() *(array.length - 1));
+     return num;
+} 
+const buttonQuote = document.getElementById('new-quote');
+buttonQuote.addEventListener('click', generate);
