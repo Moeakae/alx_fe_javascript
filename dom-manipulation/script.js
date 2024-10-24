@@ -12,13 +12,15 @@ itemListArray.forEach(function(item) {
     item.textContent = 'Array: ${item.textcontent}';
 });
 // Function to show a random quotes
-function ShowRandomQuotes() {
+let randomquotes = maths.floor(Math.random()*quoteText) + quoteCategory;
+ShowRandomQuotes = function() {
+if (randomquotes ==quoteText){
     const quoteDisplay = document.getElementById('quoteDisplay');
     const random = Math.floor(Math.random() *quote.length);
     const quote = quotes[random];
     quoteDisplay.innerHTML = '<p>"${quotes.text}" -  <strong>${quote.category}</strong></p>';
 }
-
+}
 
 // Function to add a new quote
 function addQuote() {
