@@ -19,8 +19,9 @@ function ShowRandomQuotes() {
     quoteDisplay.innerHTML = '<p>"${quotes.text}" -  <strong>${quote.category}</strong></p>';
 }
 
+
 // Function to add a new quote
-funtion addQuote() {
+function addQuote() {
     const newQuoteText = document.getElementById('newQuotetext').value;
     const newQuoteCategory = document.getElementById('newQuoteCategory').value;
 if (newQuoteText && newQuoteCategory) {
