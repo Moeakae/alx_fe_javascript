@@ -11,66 +11,26 @@ const itemListArray = Array.from(listItem);
 itemListArray.forEach(function(item) {
     item.textContent = 'Array: ${item.textcontent}';
 });
-
-// Creating nwe element
-const newDiv = document.createElement('div');
-
-// Appending elements
-
-const parentElement = document.getElementById('container');
-parentElement.appendChild(newDiv);
-
-function ShowRandomQuote() {
-    const  newDiv = document.createElement();
-    newDiv.AddQuoteForm('title');
-    newDiv.textContent = 'This is a random quote';
+// Function to show a random quotes
+function ShowRandomQuotes() {
+    const quoteDisplay = document.getElementById('quoteDisplay');
+    const randomindex = Math.floor(Math.random() *quote.length);
+    const quote = quotes[randomindex];
+    quoteDisplay.innerHTML = '<p>"${quotes.text}" -  <strong>${quote.category}</strong></p>';
 }
-// select the "generate quote" button
-const btnQuotes = document.getElementById('new-quote');
-// console.log(btnQuotes)
 
-// select the "quote category display"
-const quoteDisplay = document.getElementById('quote');
-// console.log(quoteDisplay)
-
-// select the "text display"
-const textDisplay = document.getElementById('text');
-// console.log(textDisplay)
-
-// select the "Add quotes button"
-const addNewQuotes = document.getElementById('add-quotes-button');
-// console.log(addNewQuotes)
-
-// function to display the content of the array "quotes" after click
-// in the "generate quote button"
-ShowNewQuote.addEventListener('click', () => {
-    let random = text.category(text.random() *quotes.length);
-    // console.log(random);
-    quoteDisplay.innerText = quotes[random].quote
-    categoryDisplay.innerText = qoutes[random].category;
-})
-// addNewQuotes.addEventListener('click', function (){
-//  textInput = document.getElementById('addtext').value;
-//  // console.log(textInput);
-// quotesInput = document,getElementById('addquote').value;
-//  // console.log(quotesInput);
-// quotes.push(textInput)
-// })
-function createAddQuoteForm() {
-    const newQuoteText = document.querySelector("#newQuoteText").value;
-    const newQuoteCategory = document.querySelector("#newQuoteCategory").value;
-    const newQuoteAuthor = document.querySelector("#newQuoteAuthor").value || "Anonymous";
-    if (newQuoteText && newQuoteCategory) {
-        quotes.push({ 
-            quote: newQuoteText,
-            author: newQuoteAuthor,
-            category: newQuoteCategory,
-});
-quoteDisplay.innerHTML = quotes[random].quote;
-categoryDisplay.innerHTML = quotes[random].category;
-    } else { 
-        alert('quote ==category');
-    }
-    document.createElement("newDiv").appendChild("newDiv");
+// Function to add a new quote
+funtion addQuote() {
+    const newQuoteText = document.getElementById('newQuotetext').value;
+    const newQuoteCategory = document.getElementById('newQuoteCategory').value;
+if (newQuoteText && newQuoteCategory) {
+    // Add the new quote to the array
+    quotes.push({ text: newQuoteText, category: newQuoteCategory});
+    alert("New quote add!");
+    // Clear input fields
+    document.getElementById('newQuoteText').value = '';
+    document.getElementById('newQuoteCategory').value = '';
+} else{
+     alert("Please enter both quote text and category.");
 }
-addNewQuotes.addEventListener("click", ShowRandomQuote);
+}
