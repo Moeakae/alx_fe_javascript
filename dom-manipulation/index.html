@@ -7,8 +7,17 @@
 </head>
 <body>
     <h1>Dynamic Quote Qenerator</h1>
+    < !--Diplay area for random quotes -->
     <div id="quoteDisplay"></div>
+    < !--Button to generate new quote -->
     <button id="newQuote">Show New Quote</button>
+    <button id="exportJson">Export Quotes as Json</button>
+    < !--Drop menu for category filtering -->
+    <select id="categoryFilter" onchange="filterQuoters()">
+        <option value="all">All Categories"></option>
+    < !--Categorie will be pupolar dynamical -->
+    </select>
+    < !--Form to add new quotes -->
     <div>
         <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
         <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
