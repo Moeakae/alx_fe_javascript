@@ -44,5 +44,5 @@ function addQuote() {
 newQuoteButton.addEventListener('click', getQuote);
 // Fuction created
 function getQuote(){
-    console.log("quote button was cloicked");
+    console.log("quote button was clicked");
 }
